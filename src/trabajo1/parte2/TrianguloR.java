@@ -1,4 +1,4 @@
-package parte2;
+package trabajo1.parte2;
 
 public class TrianguloR extends Triangulo{
     

@@ -1,6 +1,6 @@
-package parte2;
+package trabajo1.parte2;
 
-public class Triangulo {
+public class Triangulo extends Figura {
     int base;
     int altura;
     public Triangulo(int base, int altura){
@@ -10,6 +10,10 @@ public class Triangulo {
     double calcularArea(){
         return ((base * altura)/2);
     }
+    double calcularPerimetro(){
+        return (base + altura + hipotenusa());
+    }
+    
     double hipotenusa(){
         return Math.pow(base*base + altura*altura, 0.5);
     }
