@@ -7,6 +7,10 @@ Repositorio hecho para subir los trabajos de materia de POO en la universidad na
 - Juan Pablo Mazo Berrio
 - Sebastian Arango Urrea
 
+## UML
+
+![](UmlFiguras.png)
+
 ## Estructura
 
 en src esta estructurado con cada trabajo, que a su vez se forma como un package en el cual cada clase es un punto de algún ejercicio.
