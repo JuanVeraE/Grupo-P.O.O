@@ -1,4 +1,4 @@
-package trabajo1;
+package trabajo1.parte1;
 import java.util.Scanner;
 
 public class punto4_10 {
