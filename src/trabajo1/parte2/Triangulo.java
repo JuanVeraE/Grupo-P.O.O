@@ -21,7 +21,7 @@ public class Triangulo extends Figura {
         if ((base==altura) && (base == hipotenusa()) && (altura == hipotenusa())){
             System.out.println("Es un triangulo equilatero");
         } else if ((base != altura) && (base != hipotenusa()) && (altura != hipotenusa())){
-            System.out.println("Es un trianfulo escaleno");
+            System.out.println("Es un triangulo escaleno");
         } else {
             System.out.println("Es un triangulo isósceles");
         }

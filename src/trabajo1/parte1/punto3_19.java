@@ -3,7 +3,7 @@ package trabajo1.parte1;
 import java.util.Scanner; 
 
 public class punto3_19 { 
-    public static void main() { 
+    public static void main(String[] args) { 
 
         double lado,area,perimetro,altura; 
         double pi=Math.PI;

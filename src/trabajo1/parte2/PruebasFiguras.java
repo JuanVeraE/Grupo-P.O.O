@@ -5,10 +5,10 @@ public class PruebasFiguras {
     public static void main(String args[]) {
 
         Circulo circulo = new Circulo(2);
-        Rectangulo rectangulo = new Rectangulo(1,2);
+        Rectangulo rectangulo = new Rectangulo(3,2);
         Cuadrado cuadrado = new Cuadrado(3);
         Triangulo triangulo= new Triangulo(2, 3);
-        TrianguloR trianguloR = new TrianguloR(3,5);
+        //TrianguloR trianguloR = new TrianguloR(3,5);
 
         System.out.println("El área del círculo es = " + circulo.calcularArea());
         System.out.println("El perímetro del círculo es = " + circulo.calcularPerimetro());

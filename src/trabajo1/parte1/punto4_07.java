@@ -2,10 +2,15 @@ package trabajo1.parte1;
 
 import java.util.Scanner;
 
-public class punto4_7 {
+public class punto4_07 {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
-        int A = scan.nextInt(), B = scan.nextInt();
+
+        System.out.println("A:");
+        int A = scan.nextInt();
+        System.out.println("B:");
+        int B = scan.nextInt();
+        scan.close();
 
         if (A < B) {
             System.out.println("A es menor que B");
@@ -14,6 +19,5 @@ public class punto4_7 {
         } else {
             System.out.println("A es igual que B");
         }
-        scan.close();
     }
 }

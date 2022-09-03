@@ -3,7 +3,7 @@ package trabajo1.parte1;
 import java.util.Scanner; 
 
 public class punto3_21 {
-     public static void main() {
+     public static void main(String[] args) {
         double lado1,lado2,lado3,area,perimetro,semiperimetro;
 
         System.out.println ("lado uno del triangulo: "); 

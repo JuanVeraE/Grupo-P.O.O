@@ -2,7 +2,7 @@ package trabajo1.parte1;
 import java.util.Scanner;
 
 public class punto4_24 {
-    public static void main() {
+    public static void main(String[] args) {
         boolean a_biggerThan_b,a_biggerThan_c,b_biggerThan_c;
         Scanner input = new Scanner (System.in);
 
@@ -11,15 +11,15 @@ public class punto4_24 {
         );
 
         System.out.println ("¿es la esfera A más pesada que la B? "); 
-        System.out.println ("1: Si\n"+"0: No");
+        System.out.println ("(true, false)");
         a_biggerThan_b = input.nextBoolean();
 
         System.out.println ("¿es la esfera A más pesada que la C? "); 
-        System.out.println ("1: Si\n"+"0: No");
+        System.out.println ("(true, false)");
         a_biggerThan_c = input.nextBoolean(); 
 
         System.out.println ("¿es la esfera B más pesada que la C? "); 
-        System.out.println ("1: Si\n"+"0: No");
+        System.out.println ("(true, false)");
         b_biggerThan_c = input.nextBoolean(); 
 
         input.close();

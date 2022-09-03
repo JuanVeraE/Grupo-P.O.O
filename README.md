@@ -7,15 +7,19 @@ Repositorio hecho para subir los trabajos de materia de POO en la universidad na
 - Juan Pablo Mazo Berrio
 - Sebastian Arango Urrea
 
-## UML
+## Información génerica
+### Estructura
+
+en src esta estructurado con cada trabajo, que a su vez se forma como un package en el cual cada clase es un punto de algún ejercicio.
+lo que significa que en src/trabajo1/parte1 y src/trabajo1/parte2 se encuentra el código respectivo del primer trabajo en equipos
+
+
+### UML
+El uml que hicimos para el trabajo fue el siguiente:
+
 
 ![](UmlFiguras.png)
 
-## Estructura
-
-en src esta estructurado con cada trabajo, que a su vez se forma como un package en el cual cada clase es un punto de algún ejercicio.
-
-## Información génerica
 
 ### Folder Structure
 

@@ -3,7 +3,7 @@ package trabajo1.parte1;
 import java.util.Scanner;
 
 public class punto4_23 {
-    public static void main() {
+    public static void main(String[] args) {
         double a,b,c,raiz1,raiz2,determinante;
         Scanner input = new Scanner (System.in); //Creación de un objeto Scanner
 
@@ -11,14 +11,13 @@ public class punto4_23 {
 
         System.out.println ("A: "); 
         a = input.nextDouble(); 
-        input.close();
 
         System.out.println ("B: "); 
         b = input.nextDouble(); 
-        input.close();
 
         System.out.println ("C: "); 
         c = input.nextDouble(); 
+        
         input.close();
 
         determinante=Math.pow(b,2)-4*a*c;

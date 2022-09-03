@@ -2,7 +2,7 @@ package trabajo1.parte1;
 import java.util.Scanner; 
 
 public class punto3_18 {
-    public static void main(){
+    public static void main(String[] args){
         
         String codigo,nombre,horas,valorHora,retencion;
 
