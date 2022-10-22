@@ -1,5 +1,5 @@
 package trabajo1.parte2;
-import trabajo1.parte2.*;
+//import trabajo1.parte2.*;
 
 public class PruebasFiguras {
     public static void main(String args[]) {
