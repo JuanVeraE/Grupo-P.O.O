@@ -10,16 +10,12 @@ Repositorio hecho para subir los trabajos de materia de POO en la universidad na
 ## Información génerica
 ### Estructura
 
-en src esta estructurado con cada trabajo, que a su vez se forma como un package en el cual cada clase es un punto de algún ejercicio.
-lo que significa que en src/trabajo1/parte1 y src/trabajo1/parte2 se encuentra el código respectivo del primer trabajo en equipos
+En src esta estructurado con cada trabajo, que a su vez se forma como un package en el cual cada clase es un punto de algún ejercicio.
+lo que significa que en src/trabajo1/ y src/trabajo2/ se encuentra el código de los respectivos trabajos por equipos
+-   src/trabajo1/
+-   src/trabajo2/
 
-
-### UML
-El uml que hicimos para el trabajo fue el siguiente:
-
-
-![](UmlFiguras.png)
-
+> Para esta Entrega los puntos se encuentran en src trabajo2
 
 ### Folder Structure
 
