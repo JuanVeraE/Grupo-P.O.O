@@ -1,4 +1,4 @@
-package ejercicio8_2;
+package trabajo3.ejercicio8_2.src.ejercicio8_2;
 
 public class Ejercicio8_2 {
 
