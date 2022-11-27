@@ -1,4 +1,4 @@
-package unal.registros;
+package unal.ultimate;
 
 public class Persona {
     private String nombre, apellido, cedula;

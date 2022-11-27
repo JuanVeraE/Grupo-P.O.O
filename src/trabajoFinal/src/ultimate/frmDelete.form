@@ -38,7 +38,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="446" max="-2" attributes="0"/>
-                      <Component id="eliminarPersona2" min="-2" max="-2" attributes="0"/>
+                      <Component id="eliminarPersona" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -59,8 +59,7 @@
                       <Component id="inputCedulaEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="eliminarPersona2" min="-2" max="-2" attributes="0"/>
+              <Component id="eliminarPersona" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -72,12 +71,12 @@
         <Property name="text" type="java.lang.String" value="Cedula"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="eliminarPersona2">
+    <Component class="javax.swing.JButton" name="eliminarPersona">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarPersona2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarPersonaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputCedulaEliminar">

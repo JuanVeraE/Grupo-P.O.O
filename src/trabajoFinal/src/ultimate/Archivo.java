@@ -1,4 +1,4 @@
-package unal.registros;
+package unal.ultimate;
 
 import java.io.*;
 import javax.swing.JOptionPane;
@@ -7,13 +7,14 @@ import javax.swing.JOptionPane;
 public class Archivo {
     
     File archivo;
+    //"C:\\Users\\";
+    String direccion="./";
+    String name="registro.csv";
     
     public void crearArchivo(){
         //Creo el archivo
         try{
-            //"C:\\Users\\sebastian\\OneDrive\\Documentos\\GitHub\\Grupo-P.O.O\\src\\trabajoFinal\\src\\finalpoo\\registro.csv";
-            String direccion="C:\\Users\\sebastian\\OneDrive\\Documentos\\GitHub\\Grupo-P.O.O\\src\\trabajoFinal\\src\\finalpoo\\registro.csv";
-            File archivo=new File(direccion);
+            File archivo=new File(direccion+name);
             if(archivo.createNewFile()){
                 JOptionPane.showMessageDialog(null, "Archivo Creado");
             }
@@ -24,50 +25,104 @@ public class Archivo {
     
     public void escribirArchivo(Persona persona){
         try{
-            FileWriter escritura= new FileWriter("C:\\Users\\sebastian\\OneDrive\\Documentos\\GitHub\\Grupo-P.O.O\\src\\trabajoFinal\\src\\finalpoo\\registro.csv", true);
+            FileWriter escritura= new FileWriter(direccion+name, true);
             escritura.write(persona.getNombre()+","+persona.getApellido()+","+persona.getCedula()+"\r\n");
             escritura.close();
+            JOptionPane.showMessageDialog(null, "Persona Agregada");
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
+    
+    
+    public void editarPersona(Persona persona,String cedulaVieja){
+        
+        String cedula=persona.getCedula();
+        String apellido=persona.getApellido();
+        String nombre=persona.getNombre();
+        
+        try{
+            
+            File inputFile = new File(direccion+name);//archivo
+            File tempFile = new File(direccion+"temp_"+name);//newArchivo
+
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+            String cedulaToRemove = cedulaVieja;
+            String currentLine;
+
+            while((currentLine = reader.readLine()) != null) {
+                // trim newline when comparing with lineToRemove
+                String[] datos = currentLine.trim().split(",");
+                
+                if(datos[2].trim().equals(cedulaToRemove.trim())) continue;
+                    writer.write(currentLine + System.getProperty("line.separator"));
+            }
+            writer.write(nombre+","+apellido+","+cedula+"\n");
+            writer.close(); 
+            reader.close();
+            
+            inputFile.delete();
+            boolean flag = tempFile.renameTo(inputFile);
+            JOptionPane.showMessageDialog(null, "Se edito"); 
+            
+            
+    
         }catch(IOException e){
             System.out.println(e);
         }
     }
        
-       public void borrarPersona(Persona persona){
-           
-        File inputFile = new File("");
-        File tempFile = new File("myTempFile.txt");
-        //capturo los datos de la persona
-        String nombre=persona.getNombre();
-        String apellido=persona.getApellido();
-        String cedula=persona.getCedula();
+    public void borrarPersona(String cedula){
         try{
-            FileReader fr = new FileReader(archivo);
-            FileWriter fw = new FileWriter(archivo);
-            BufferedReader br = new BufferedReader(fr);
-            String[] tempArr;
-            //FileWriter escritor= new FileWriter(archivo, true);
-            String texto = br.readLine();
-            while(texto != null) {
-                tempArr = texto.split(",");
-                //String de los registros
-                String nombreRegistro=tempArr[0];
-                String apellidoRegistro=tempArr[1];
-                String cedulaRegistro=tempArr[2];
-                //si los registros coinciden
-                if( nombre.equals(nombreRegistro) &&
-                    apellido.equals(apellidoRegistro)&&
-                    cedula.equals(cedulaRegistro)){
-                    //Borrar
+
+            File inputFile = new File(direccion+name);//archivo
+            File tempFile = new File(direccion+"temp_"+name);//newArchivo
+
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+            String cedulaToRemove = cedula;
+            String currentLine;
+
+            while((currentLine = reader.readLine()) != null) {
+                // trim newline when comparing with lineToRemove
+                String[] datos = currentLine.trim().split(",");
+                if(datos[2].trim().equals(cedulaToRemove.trim())) continue;
+                    writer.write(currentLine + System.getProperty("line.separator"));
                     
-                    //
-                }
-                texto = br.readLine();
             }
-            //escritor.write(persona.getNombre()+","+persona.getApellido()+","+persona.getCedula()+"\r\n");
-            //escritor.close();
+            writer.close(); 
+            reader.close(); 
+            inputFile.delete();
+            boolean flag = tempFile.renameTo(inputFile);
+            
+            JOptionPane.showMessageDialog(null, "Registro editado"); 
+    
         }catch(IOException e){
             System.out.println(e);
         }
+    }
+    public String mostrarPersonas(){
+        String totalAnswer="";
+        try {
+            File inputFile = new File(direccion+name);//archivo
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            String currentLine;
             
+            // Crear un objeto BufferedReader al que se le pasa 
+            //   un objeto FileReader con el nombre del fichero
+
+            while((currentLine = reader.readLine()) != null) {
+                totalAnswer=totalAnswer+"\n"+currentLine;
+            }
+            reader.close();
+
+        }catch(IOException e){
+            System.out.println(e);
+        }
+        JOptionPane.showMessageDialog(null, "Refrescado");
+        return totalAnswer;
     }
 }

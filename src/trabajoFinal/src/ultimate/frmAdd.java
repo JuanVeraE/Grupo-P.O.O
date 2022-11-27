@@ -1,4 +1,4 @@
-package unal.registros;
+package unal.ultimate;
 
 import java.io.FileWriter;
 import javax.swing.JOptionPane;

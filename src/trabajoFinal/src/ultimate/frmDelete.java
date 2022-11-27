@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package unal.registros;
+package unal.ultimate;
+
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,7 +32,7 @@ public class frmDelete extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        eliminarPersona2 = new javax.swing.JButton();
+        eliminarPersona = new javax.swing.JButton();
         inputCedulaEliminar = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
@@ -37,10 +42,10 @@ public class frmDelete extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Cedula");
 
-        eliminarPersona2.setText("Eliminar");
-        eliminarPersona2.addActionListener(new java.awt.event.ActionListener() {
+        eliminarPersona.setText("Eliminar");
+        eliminarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarPersona2ActionPerformed(evt);
+                eliminarPersonaActionPerformed(evt);
             }
         });
 
@@ -63,7 +68,7 @@ public class frmDelete extends javax.swing.JInternalFrame {
                         .addComponent(inputCedulaEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(446, 446, 446)
-                        .addComponent(eliminarPersona2)))
+                        .addComponent(eliminarPersona)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -77,21 +82,27 @@ public class frmDelete extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
                         .addComponent(inputCedulaEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(eliminarPersona2)
+                .addComponent(eliminarPersona)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void eliminarPersona2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPersona2ActionPerformed
+    private void eliminarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPersonaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarPersona2ActionPerformed
+        Archivo archivo = new Archivo();
+        //FileWriter escritura= new FileWriter(direccion, true);
+        String cedula = inputCedulaEliminar.getText().trim();
+
+        archivo.borrarPersona(cedula);
+
+        JOptionPane.showMessageDialog(null, "Registro borrado"); 
+    }//GEN-LAST:event_eliminarPersonaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton eliminarPersona2;
+    private javax.swing.JButton eliminarPersona;
     private javax.swing.JTextField inputCedulaEliminar;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

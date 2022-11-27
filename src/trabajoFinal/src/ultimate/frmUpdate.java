@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package unal.registros;
+package unal.ultimate;
 
 import java.io.*;
 import javax.swing.JOptionPane;
@@ -146,41 +146,18 @@ public class frmUpdate extends javax.swing.JInternalFrame {
 
     private void editarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPersonaActionPerformed
         
+        Archivo archivo = new Archivo();
+        //FileWriter escritura= new FileWriter(direccion, true);
         String cedula = inputCedula.getText().trim();
-        String nombreUp = inputNombreUpdate.getText();
-        String apellidoUp = inputApellidosUpdate.getText();
-        String cedulaUp = inputCedulaUpdate.getText();
-        try{
-            String direccion="C:\\Users\\sebastian\\OneDrive\\Documentos\\GitHub\\Grupo-P.O.O\\src\\trabajoFinal\\src\\finalpoo\\registro.csv";
-            FileReader fr = new FileReader(direccion);
-            BufferedReader br = new BufferedReader(fr);
-            String[] tempArr;
-            FileWriter escritor= new FileWriter(direccion, true);
-            String texto = br.readLine();
-            
-            JOptionPane.showMessageDialog(null, cedula);
-            while(texto != null) {
-                //
-                tempArr = texto.split(",");
-                //String nombreRegistro=tempArr[0];
-                //String apellidoRegistro=tempArr[1];
-                String cedulaRegistro=tempArr[2];
-
-                if(cedula.equals(cedulaRegistro)){
-                    //borrarPersona(cedula);
-                    escritor.write(nombreUp+","+apellidoUp+","+cedulaUp+"\n");
-                    escritor.close();
-                    JOptionPane.showMessageDialog(null, "Registro editado");
-                    break;
-                }
-                texto = br.readLine();
-            }
-            
-
-            }catch(IOException e){
-            System.out.println(e);
-            }
         
+        String nombreUpdate = inputNombreUpdate.getText().trim();
+        String apellidoUpdate = inputApellidosUpdate.getText().trim();
+        String cedulaUpdate = inputCedulaUpdate.getText().trim();
+        
+        Persona persona = new Persona(nombreUpdate,apellidoUpdate,cedulaUpdate);
+
+        archivo.editarPersona(persona,cedula);
+    
     }//GEN-LAST:event_editarPersonaActionPerformed
 
 
